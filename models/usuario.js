@@ -31,6 +31,7 @@ const usuarioSchema = Schema ({
         type: Boolean,
         default: false          
     }
+    
 
 
 });
@@ -38,7 +39,8 @@ const usuarioSchema = Schema ({
 //Usar funcion normal para utilizar el this
 usuarioSchema.methods.toJSON = function () {
     //sacamos __v y password unicamente
-    const { __v, password, ...usuario } = this.toObject();
+    const { __v, password, _id, ...usuario } = this.toObject();
+    usuario.uid = _id;
     return usuario;
 }
 

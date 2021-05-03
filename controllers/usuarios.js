@@ -95,10 +95,10 @@ const usuariosDelete = async (req, res) => {
 
     const { id } = req.params;
 
-    //Fisicamente lo borramos
+    //ALTERNATIVA A: Fisicamente lo borramos
     //const usuario = await Usuario.findByIdAndDelete(id);
 
-    //Cambiar el estado del usuario
+    //ALTERNATIVA B: Cambiamos el estado del usuario
     const usuario = await Usuario.findByIdAndUpdate(id, {estado: false});
     
     res.json ({
