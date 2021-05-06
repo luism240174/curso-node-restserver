@@ -99,7 +99,7 @@ const usuariosDelete = async (req, res) => {
     //const usuario = await Usuario.findByIdAndDelete(id);
 
     //ALTERNATIVA B: Cambiamos el estado del usuario
-    const usuario = await Usuario.findByIdAndUpdate(id, {estado: false});
+    const usuario = await Usuario.findByIdAndUpdate(id, { estado: false });
     
     res.json ({
         msg: 'delete API',
